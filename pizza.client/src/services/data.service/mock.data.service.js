@@ -22,7 +22,7 @@ export class MockDataService extends AbstractDataService {
                     }],
                 price: 500,
                 image: "/images/pizza-pepperoni.png",
-                coockingTime: "30 мин"
+                cookingTime: "30 мин"
             }, {
                 id: 2,
                 group: "Пицца",
@@ -41,7 +41,7 @@ export class MockDataService extends AbstractDataService {
                     }],
                 price: 500,
                 image: "/images/margherita.png",
-                coockingTime: "30 мин"
+                cookingTime: "30 мин"
             }, {
                 id: 2,
                 group: "Пицца",
@@ -60,7 +60,7 @@ export class MockDataService extends AbstractDataService {
                     }],
                 price: 500,
                 image: "/images/pizza-goat-cheese.png",
-                coockingTime: "30 мин"
+                cookingTime: "30 мин"
             }, {
                 id: 2,
                 group: "Пицца",
@@ -79,7 +79,7 @@ export class MockDataService extends AbstractDataService {
                     }],
                 price: 500,
                 image: "/images/barbeku.png",
-                coockingTime: "30 мин"
+                cookingTime: "30 мин"
             }, {
                 id: 2,
                 group: "Пицца",
@@ -98,7 +98,7 @@ export class MockDataService extends AbstractDataService {
                     }],
                 price: 500,
                 image: "/images/kisspng-california-style-pizza-sicilian-pizza-hawaiian-piz-hawaiian-pizza-5b15bd84002d61.5996858115281514280007.png",
-                coockingTime: "30 мин"
+                cookingTime: "30 мин"
             },
             {
                 id: 3,
@@ -118,7 +118,7 @@ export class MockDataService extends AbstractDataService {
                     }],
                 price: 150,
                 image: "/images/chicken-sandwich.png",
-                coockingTime: "20 мин"
+                cookingTime: "20 мин"
             }, 
             {
                 id: 3,
@@ -138,7 +138,7 @@ export class MockDataService extends AbstractDataService {
                     }],
                 price: 150,
                 image: "/images/cheeseburger-beef.png",
-                coockingTime: "20 мин"
+                cookingTime: "20 мин"
             }]);
             }, 300);
           });
