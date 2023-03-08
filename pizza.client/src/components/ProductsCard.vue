@@ -29,7 +29,7 @@ export default {
                     }[];
             price: number;
             image: string;
-            coockingTime: string
+            cookingTime: string
         }
         */
         product: Object
