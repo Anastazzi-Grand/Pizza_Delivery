@@ -16,6 +16,7 @@ import Aside from './layout/AsideComponent.vue';
 import { config } from '@/config';
 import { MockDataService } from '@/services/data.service/mock.data.service';
 import { DataService } from '@/services/data.service/data.service';
+import { BasketService } from './services/basket.service';
 
 
 export default {
@@ -27,7 +28,8 @@ export default {
   },
   provide() {
     return {
-      dataService: config.demo ? new MockDataService() : new DataService()
+      dataService: config.demo ? new MockDataService() : new DataService(),
+      basket: new BasketService()
     }
   }
 }

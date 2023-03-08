@@ -43,7 +43,7 @@ export class MockDataService extends AbstractDataService {
                 image: "/images/margherita.png",
                 cookingTime: "30 мин"
             }, {
-                id: 2,
+                id: 3,
                 group: "Пицца",
                 name: "4 сыра",
                 property: [{
@@ -62,7 +62,7 @@ export class MockDataService extends AbstractDataService {
                 image: "/images/pizza-goat-cheese.png",
                 cookingTime: "30 мин"
             }, {
-                id: 2,
+                id: 4,
                 group: "Пицца",
                 name: "Цыпленок барбекю",
                 property: [{
@@ -81,7 +81,7 @@ export class MockDataService extends AbstractDataService {
                 image: "/images/barbeku.png",
                 cookingTime: "30 мин"
             }, {
-                id: 2,
+                id: 5,
                 group: "Пицца",
                 name: "Мексиканская пицца",
                 property: [{
@@ -101,7 +101,7 @@ export class MockDataService extends AbstractDataService {
                 cookingTime: "30 мин"
             },
             {
-                id: 3,
+                id: 6,
                 group: "Бургер",
                 name: "Бургер с курицей",
                 property: [{
@@ -121,7 +121,7 @@ export class MockDataService extends AbstractDataService {
                 cookingTime: "20 мин"
             }, 
             {
-                id: 3,
+                id: 7,
                 group: "Бургер",
                 name: "Бургер с говядиной",
                 property: [{
