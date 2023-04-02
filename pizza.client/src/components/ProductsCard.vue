@@ -25,6 +25,7 @@
 </template>
 <script>
 
+
 import { inject } from 'vue';
 export default {
     props: {
@@ -55,7 +56,8 @@ export default {
     }
   }
 }
+
 </script>
 <style lang="">
-    
+
 </style>
