@@ -5,25 +5,25 @@ namespace PizzaDelivery.Controllers
 {
     [ApiController]
     [Route("/lineNumber")]
-    public class LineNumbersController : Controller
+    public class OrderItemsController : Controller
     {
         private readonly ApplicationContext _context;
 
-        public LineNumbersController(ApplicationContext context)
+        public OrderItemsController(ApplicationContext context)
         {
             _context = context;
         }
 
         // GET: api/LineNumbers
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<LineNumber>>> GetLineNumber()
+        public async Task<ActionResult<IEnumerable<OrderItems>>> GetLineNumber()
         {
             return await _context.LineNumber.ToListAsync();
         }
 
         // GET: api/LineNumbers/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<LineNumber>> GetLineNumber(int id)
+        public async Task<ActionResult<OrderItems>> GetLineNumber(int id)
         {
             var lineNumber = await _context.LineNumber.FindAsync(id);
 
@@ -38,7 +38,7 @@ namespace PizzaDelivery.Controllers
         // PUT: api/LineNumbers/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutLineNumber(int id, LineNumber lineNumber)
+        public async Task<IActionResult> PutLineNumber(int id, OrderItems lineNumber)
         {
             if (id != lineNumber.Id)
             {
@@ -69,7 +69,7 @@ namespace PizzaDelivery.Controllers
         // POST: api/LineNumbers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<LineNumber>> PostLineNumber(LineNumber lineNumber)
+        public async Task<ActionResult<OrderItems>> PostLineNumber(OrderItems lineNumber)
         {
             _context.LineNumber.Add(lineNumber);
             await _context.SaveChangesAsync();

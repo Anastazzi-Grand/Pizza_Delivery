@@ -10,29 +10,26 @@ namespace PizzaDelivery
 {
     public class Order
     {
-        [Column("Order_number")]
+        [Column("OrderNumber")]
         public int Id { get; set; }
 
-        [Column("Client_ID")]
         public int ClientId { get; set; }
 
-        public DateTime Order_date { get; set; }
+        public DateTime OrderDate { get; set; }
 
-        [Required]
-        public string Status { get; set; } = null!;
+        public string Status { get; set; }
 
-        public DateTime Date_of_execution { get; set; }
+        public DateTime DeliveryDate { get; set; }
 
         public decimal Payment { get; set; }
 
-        [Column("Cook_Employee_ID")]
-        public int CookId { get; set; }
+        public int CookEmployeeId { get; set; }
 
-        [Column("Operator_Employee_ID")]
-        public int OpertorId { get; set; }
+        public int OperatorEmployeeId { get; set; }
 
-        [Column("Courier_ID")]
         public int CourierId { get; set; }
+
+        public decimal? TotalPrice { get; set; }
 
     }
 

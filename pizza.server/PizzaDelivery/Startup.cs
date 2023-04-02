@@ -7,6 +7,9 @@ using Microsoft.EntityFrameworkCore; // пространство имен Entity
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using PizzaDelivery.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace PizzaDelivery
 {
@@ -22,12 +25,30 @@ namespace PizzaDelivery
         public void ConfigureServices(IServiceCollection services)
         {
             string con = "Server=VNEDOSTUPA\\SQLEXXPRESS;Database=practic;Trusted_Connection=True;";
+            string secret = "Jwt:123456023fdf00secret";
+            string issuer = "Jwt:Issuer";
             services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(con));
             services.AddControllers();
             services.AddScoped<ProductService>();
+            services.AddScoped<ClientService>();
+            services.AddSingleton<JwtService>(x => new JwtService(secret, issuer));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "PizzaDelivery", Version = "v1" });
+            });
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            .AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = Configuration[issuer],
+                    ValidAudience = Configuration[issuer],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration[secret]))
+                };
             });
         }
 

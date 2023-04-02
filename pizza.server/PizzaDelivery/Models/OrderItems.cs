@@ -8,18 +8,20 @@ using System.Threading.Tasks;
 
 namespace PizzaDelivery
 {
-    public class LineNumber
+    public class OrderItems
     {
-        [Column("Order_line_number")]
+        [Column("OrderLineNumber")]
         public int Id { get; set; }
+
+        public int OrderNumber { get; set; }
 
         public int Count { get; set; }
 
-        [Column("Order_number")]
-        public int OrderId { get; set; }
+        public int ProductId { get; set; }
 
-        //[Column("Product_ID")]
-        public int Product_ID { get; set; }
+        public int? ProductPropertyId { get; set; }
+
+        public int? ProductOptionId { get; set; }
 
     }
 }

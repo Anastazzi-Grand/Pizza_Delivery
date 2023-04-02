@@ -6,13 +6,10 @@ namespace PizzaDelivery
     public class ApplicationContext : DbContext
     {
         public DbSet<Order> Order { get; set; }
-        public DbSet<LineNumber> LineNumber { get; set; }
+        public DbSet<OrderItems> LineNumber { get; set; }
         public DbSet<Delivery> Delivery { get; set; }
         public DbSet<Employee> Employee { get; set; }
-        public DbSet<Pizza> Pizza { get; set; }
-        public DbSet<Post> Post { get; set; }
         public DbSet<Client> Client { get; set; }
-        public DbSet<Sizes> Sizes { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductProperty> ProductProperties { get; set; }
         public DbSet<ProductOption> ProductOptions { get; set; }
