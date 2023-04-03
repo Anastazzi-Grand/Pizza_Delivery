@@ -1,15 +1,17 @@
 <template>
-    <div>
-        <CatalogComponent/>
-    </div>
+    <main>
+      <router-view/>
+    </main>
 </template>
 <script>
-import CatalogComponent from '@/components/CatalogComponent.vue';
 
 export default {
-    components: { CatalogComponent }
+
 }
 </script>
-<style lang="">
-    
+<style>
+  main {
+    overflow-y: auto;
+    height: calc(100vh - 70px);
+  }
 </style>

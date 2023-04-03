@@ -1,8 +1,25 @@
+import { reactive } from 'vue';
+
 export class BasketService {
     /**
-     * @type Map<number, {id: number; price: number; count: number; property: {key: string; value: string}[]}>
+     * @type Map<number, {id: number; price: number; count: number; property: {key: string; value: string}}>
      * */
-    basket;
+    cart = reactive(new Map());
+
+    /**
+     * @type {{count: number; sum: number}}
+     * */
+    get total() {
+        const result = {
+            count: 0,
+            sum: 0
+        }
+        this.cart.forEach(value => {
+            result.count += value.count;
+            result.sum += value.price;
+        });
+        return result;
+    }
     /**
      * @param {{
      *             id: number;
@@ -20,16 +37,16 @@ export class BasketService {
      *             image: string;
      *             cookingTime: string
      *         }} product
-     *  @param {{key: string; name: string}[]} property
+     *  @param {string | number[]} property
      * */
     addProductToBasket(product, property) {
         const markUp = this.calculateMarkUp(product, property)
-        if (this.basket.has(product.id)) {
-            this.basket.get(product.id).count += 1;
-            this.basket.get(product.id).price += (product.price + markUp)*(this.basket.get(product.id).count);
-            this.basket.get(product.id).property = property;
+        if (this.cart.has(product.id)) {
+            this.cart.get(product.id).count += 1;
+            this.cart.get(product.id).price = (product.price + markUp)*(this.cart.get(product.id).count);
+            this.cart.get(product.id).property = property;
         } else {
-            this.basket.set(product.id, {
+            this.cart.set(product.id, {
                 id: product.id,
                 price: product.price + markUp,
                 count: 1,
@@ -59,25 +76,19 @@ export class BasketService {
     * */
     removeProductFromBasket(product, property) {
         const markUp = this.calculateMarkUp(product, property)
-        if (this.basket.has(product.id)) {
-            this.basket.get(product.id).count -= 1;
-            this.basket.get(product.id).price -= (product.price + markUp)*(this.basket.get(product.id).count);
-            this.basket.get(product.id).property = property;
+        if (this.cart.has(product.id)) {
+            this.cart.get(product.id).count -= 1;
+            this.cart.get(product.id).price = (product.price + markUp)*(this.cart.get(product.id).count);
+            this.cart.get(product.id).property = property;
         }
     }
 
     calculateMarkUp(product, property) {
-        return product.property.reduce((acc, prop) => {
-            property.filter(e => e.name === prop.name).forEach(p => {
-                prop.options.forEach(f => {
-                    if (f.key === p.key) { acc += f.markUp }
-                })
-            })
+        return product.property.reduce((acc, prop, index) => {
+            acc += prop.options.find(o => o.key === property[index]).markUp;
             return acc
         },0)
     }
-    constructor() {
-        this.basket = new Map();
-    }
+    constructor() {}
 
 }
