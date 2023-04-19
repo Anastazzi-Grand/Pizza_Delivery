@@ -1,20 +1,35 @@
 <template>
-    <nav class="navbar navbar-dark bg-dark">
-      <div class="d-flex w-100 justify-content-between">
-        <div class="container-fluid" >
-          <span class="navbar-brand mb-0 h1">Название</span>
-        </div>
-        <div class="container-fluid col-1">
-          <span class="navbar-brand mb-0 h1">Корзина</span>
-        </div>
+  <div class="navbar text-white sticky-top bg-dark">
+    <div class="container-fluid d-flex justify-content-between">
+      <h3 class="mb-0">Название</h3>
+      <div class="cart d-flex align-items-center">
+        <p class="my-0" v-if="basket.total.count === 0">В корзине пусто</p>
+        <p v-else class="my-0">
+          Выбрано {{basket.total.count}} на сумму {{basket.total.sum}}
+          <button class="btn btn-warning mx-2">Перейти в корзину</button>
+        </p>
       </div>
-      </nav>
+    </div>
+  </div>
 </template>
 <script>
+import { inject } from 'vue';
+
 export default {
-    
+    data() {
+      return {
+        basket: inject("basket")
+      }
+    },
+  computed: {
+    cart() {
+      return this.basket.cart
+    }
+  }
 }
 </script>
-<style lang="">
-    
+<style>
+    .cart {
+      height: 50px;
+    }
 </style>
