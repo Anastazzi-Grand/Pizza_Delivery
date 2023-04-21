@@ -10,6 +10,8 @@ using PizzaDelivery.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using PizzaDelivery.Main;
+using PizzaDelivery.Models;
 
 namespace PizzaDelivery
 {
@@ -25,29 +27,51 @@ namespace PizzaDelivery
         public void ConfigureServices(IServiceCollection services)
         {
             string con = "Server=VNEDOSTUPA\\SQLEXXPRESS;Database=practic;Trusted_Connection=True;";
-            string secret = "Jwt:123456023fdf00secret";
-            string issuer = "Jwt:Issuer";
+            //Console.WriteLine(Routine.SECRET);
+            //Console.WriteLine(Routine.ISSUER);
             services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(con));
             services.AddControllers();
             services.AddScoped<ProductService>();
             services.AddScoped<ClientService>();
-            services.AddSingleton<JwtService>(x => new JwtService(secret, issuer));
+            //services.AddScoped<JwtService>();
+            //services.AddScoped<JwtMiddleware>();
+
+
+            //services.AddSingleton();
+            var authOptions = Configuration.GetSection("jwt").Get<AuthOptions>();
+           // services.AddSingleton(x => new JwtService(jwtTokenConfig.Secret, jwtTokenConfig.Issuer));
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader();
+                    });
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "PizzaDelivery", Version = "v1" });
             });
+
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(options =>
             {
+                options.RequireHttpsMetadata = true;
+                //options.SaveToken = true;
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuer = true,
+                    ValidIssuer = authOptions.Issuer,
+
                     ValidateAudience = true,
+                    ValidAudience = authOptions.Audience,
+
                     ValidateLifetime = true,
+
+                    IssuerSigningKey = authOptions.GetSymmetricSecurityKey(),
                     ValidateIssuerSigningKey = true,
-                    ValidIssuer = Configuration[issuer],
-                    ValidAudience = Configuration[issuer],
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration[secret]))
                 };
             });
         }
@@ -67,12 +91,26 @@ namespace PizzaDelivery
 
             app.UseRouting();
 
+           app.UseCors();
+
+
+            //app.UseMiddleware<JwtMiddleware>();
+
+
             app.UseAuthorization();
+
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+/*
+            app.MapWhen(context => !context.Request.Path.StartsWithSegments("/api/products") || !context.Request.Path.StartsWithSegments("/api/auth"), 
+                builder =>
+            {
+                builder.UseMiddleware<JwtMiddleware>();
+            });*/
         }
     }
 }

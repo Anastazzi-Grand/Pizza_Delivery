@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace PizzaDelivery.Controllers
@@ -16,6 +17,7 @@ namespace PizzaDelivery.Controllers
 
         // GET: api/Orders
         [HttpGet]
+        [Authorize(Roles = "User")]
         public async Task<ActionResult<IEnumerable<Order>>> GetOrder()
         {
             return await _context.Order.ToListAsync();

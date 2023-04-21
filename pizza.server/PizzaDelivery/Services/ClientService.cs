@@ -12,14 +12,9 @@ namespace PizzaDelivery.Services
             _context = context;
         }
 
-        public async Task<ActionResult<Client>> GetClientAsync(LoginModel loginModel)
+        public Client GetClientAsync(string phoneNumber, string passwordHash)
         {
-            var client = _context.Client.FirstOrDefault(c => c.PhoneNumber == loginModel.PhoneNumber);
-            if (client != null && client.PasswordHash == loginModel.PasswordHash)
-            {
-                return client;
-            }
-            return null;
+           return _context.Client.SingleOrDefault(c => c.PhoneNumber == phoneNumber && c.PasswordHash == passwordHash);
 
         }
     }
