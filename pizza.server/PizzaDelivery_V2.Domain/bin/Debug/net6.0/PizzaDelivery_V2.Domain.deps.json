@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "PizzaDelivery_V2.Domain/1.0.0": {
+        "runtime": {
+          "PizzaDelivery_V2.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PizzaDelivery_V2.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

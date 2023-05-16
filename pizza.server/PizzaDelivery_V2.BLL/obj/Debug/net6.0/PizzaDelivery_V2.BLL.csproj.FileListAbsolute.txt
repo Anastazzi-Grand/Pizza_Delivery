@@ -1,0 +1,17 @@
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V2.BLL\bin\Debug\net6.0\PizzaDelivery_V2.BLL.deps.json
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V2.BLL\bin\Debug\net6.0\PizzaDelivery_V2.BLL.dll
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V2.BLL\bin\Debug\net6.0\PizzaDelivery_V2.BLL.pdb
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V2.BLL\bin\Debug\net6.0\PizzaDelivery_V2.DAL.dll
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V2.BLL\bin\Debug\net6.0\PizzaDelivery_V2.Domain.dll
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V2.BLL\bin\Debug\net6.0\PizzaDelivery_V2.DAL.pdb
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V2.BLL\bin\Debug\net6.0\PizzaDelivery_V2.Domain.pdb
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V2.BLL\obj\Debug\net6.0\PizzaDelivery_V2.BLL.csproj.AssemblyReference.cache
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V2.BLL\obj\Debug\net6.0\PizzaDelivery_V2.BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V2.BLL\obj\Debug\net6.0\PizzaDelivery_V2.BLL.AssemblyInfoInputs.cache
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V2.BLL\obj\Debug\net6.0\PizzaDelivery_V2.BLL.AssemblyInfo.cs
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V2.BLL\obj\Debug\net6.0\PizzaDelivery_V2.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V2.BLL\obj\Debug\net6.0\PizzaDelivery_V2.BLL.csproj.CopyComplete
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V2.BLL\obj\Debug\net6.0\PizzaDelivery_V2.BLL.dll
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V2.BLL\obj\Debug\net6.0\refint\PizzaDelivery_V2.BLL.dll
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V2.BLL\obj\Debug\net6.0\PizzaDelivery_V2.BLL.pdb
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V2.BLL\obj\Debug\net6.0\ref\PizzaDelivery_V2.BLL.dll

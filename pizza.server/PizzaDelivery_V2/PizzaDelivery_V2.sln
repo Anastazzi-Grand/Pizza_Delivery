@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaDelivery_V2", "PizzaDelivery_V2.csproj", "{7EA66A03-CD6C-4C1F-9A85-FD466AD4FA33}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{F6944047-19FA-4CD8-9FCD-3C6524B4062C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaDelivery_V2.DAL", "..\PizzaDelivery_V2.DAL\PizzaDelivery_V2.DAL.csproj", "{AAC410B9-93F9-4B77-8D7D-978D4FE6A155}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BLL", "BLL", "{9AE04060-C0BA-4E34-AE44-2D109D88921D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaDelivery_V2.BLL", "..\PizzaDelivery_V2.BLL\PizzaDelivery_V2.BLL.csproj", "{F444BB26-7F0B-4FF1-99FD-D2B9064DD208}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{21327115-1417-4F28-9C38-A10FEB35689F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaDelivery_V2.Domain", "..\PizzaDelivery_V2.Domain\PizzaDelivery_V2.Domain.csproj", "{9ADBA485-8CAB-4630-99CD-2C170819FF02}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7EA66A03-CD6C-4C1F-9A85-FD466AD4FA33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EA66A03-CD6C-4C1F-9A85-FD466AD4FA33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EA66A03-CD6C-4C1F-9A85-FD466AD4FA33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EA66A03-CD6C-4C1F-9A85-FD466AD4FA33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAC410B9-93F9-4B77-8D7D-978D4FE6A155}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAC410B9-93F9-4B77-8D7D-978D4FE6A155}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAC410B9-93F9-4B77-8D7D-978D4FE6A155}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAC410B9-93F9-4B77-8D7D-978D4FE6A155}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F444BB26-7F0B-4FF1-99FD-D2B9064DD208}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F444BB26-7F0B-4FF1-99FD-D2B9064DD208}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F444BB26-7F0B-4FF1-99FD-D2B9064DD208}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F444BB26-7F0B-4FF1-99FD-D2B9064DD208}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9ADBA485-8CAB-4630-99CD-2C170819FF02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ADBA485-8CAB-4630-99CD-2C170819FF02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ADBA485-8CAB-4630-99CD-2C170819FF02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ADBA485-8CAB-4630-99CD-2C170819FF02}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AAC410B9-93F9-4B77-8D7D-978D4FE6A155} = {F6944047-19FA-4CD8-9FCD-3C6524B4062C}
+		{F444BB26-7F0B-4FF1-99FD-D2B9064DD208} = {9AE04060-C0BA-4E34-AE44-2D109D88921D}
+		{9ADBA485-8CAB-4630-99CD-2C170819FF02} = {21327115-1417-4F28-9C38-A10FEB35689F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FC63582F-BA31-4916-8266-CC053A610F10}
+	EndGlobalSection
+EndGlobal

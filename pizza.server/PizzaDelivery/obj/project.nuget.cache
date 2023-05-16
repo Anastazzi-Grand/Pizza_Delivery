@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EfOr2Tjy7gAFGrRLryf1qGFsuqrRh0Rt+0ZFGKQdjqgHyEGA3bstXO0VPF+oWJgf1l/V56nDgQ0e4sNsuOoXNQ==",
+  "dgSpecHash": "UVfvOziqbqMefdhIZt0CiwA+CxBvilJDKrHunE66/mp/ANy0qakRXRfuPZg2Q8LF+NxRKoqCV6r/5Wg+WKDAlg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery\\PizzaDelivery.csproj",
+  "projectFilePath": "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery\\Web API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Anastazzi\\.nuget\\packages\\jwt\\10.0.2\\jwt.10.0.2.nupkg.sha512",
     "C:\\Users\\Anastazzi\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.15\\microsoft.aspnetcore.authentication.jwtbearer.6.0.15.nupkg.sha512",

@@ -2684,9 +2684,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery\\PizzaDelivery.csproj",
-      "projectName": "PizzaDelivery",
-      "projectPath": "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery\\PizzaDelivery.csproj",
+      "projectUniqueName": "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery\\Web API.csproj",
+      "projectName": "Web API",
+      "projectPath": "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery\\Web API.csproj",
       "packagesPath": "C:\\Users\\Anastazzi\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery\\obj\\",
       "projectStyle": "PackageReference",
