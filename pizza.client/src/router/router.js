@@ -19,7 +19,7 @@ const routes = [
         path: '/cart',
         name: 'Cart',
         component: CartPage,
-        meta: { requiresAuth: true },
+        // meta: { requiresAuth: true },
     },
     {
         path: '/profile',

@@ -1,9 +1,9 @@
 <template>
-  <ProductsCard
-      :product="item"
-      @add-to-cart="basket.addProductToBasket(item, $event)"
-      @remove-with-cart="basket.removeProductFromBasket(item, $event)"
-      v-for="item in catalog" v-bind:key="item.id"></ProductsCard>
+  <div class="d-grid gap-2">
+    <ProductsCard
+        :product="item"
+        v-for="item in catalog" v-bind:key="item.id"></ProductsCard>
+  </div>
 </template>
 <script>
 import ProductsCard from '../components/ProductsCard.vue';
@@ -29,6 +29,7 @@ export default {
   },
   created() {
     this.dataService.getProducts().then(data => {
+      console.log('this.dataService.getProducts')
       this.catalog = data;
     })
   },
