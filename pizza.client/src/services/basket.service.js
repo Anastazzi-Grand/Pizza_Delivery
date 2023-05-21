@@ -2,9 +2,13 @@ import { reactive } from 'vue';
 
 export class BasketService {
     /**
-     * @type Map<number, {id: number; price: number; count: number; property: {key: string; value: string}}>
+     * @type Map<number, {id: number; price: number; property: {id: number; name: string, option: {key: string, value: string, markUp: number}}[]}[]>
      * */
     cart = reactive(new Map());
+
+    getProductFromCart(id) {
+        this.cart.get(id);
+    }
 
     /**
      * @type {{count: number; sum: number}}
@@ -15,8 +19,10 @@ export class BasketService {
             sum: 0
         }
         this.cart.forEach(value => {
-            result.count += value.count;
-            result.sum += value.price;
+            result.count += value.length;
+            value.forEach(p => {
+                result.sum += (p.price + p.property.reduce((sum, pr) => sum += pr.option.markUp, 0));
+            })
         });
         return result;
     }
@@ -39,48 +45,54 @@ export class BasketService {
      *         }} product
      *  @param {string | number[]} property
      * */
-    addProductToBasket(product, property) {
-        const markUp = this.calculateMarkUp(product, property)
-        if (this.cart.has(product.id)) {
-            this.cart.get(product.id).count += 1;
-            this.cart.get(product.id).price = (product.price + markUp)*(this.cart.get(product.id).count);
-            this.cart.get(product.id).property = property;
-        } else {
-            this.cart.set(product.id, {
-                id: product.id,
-                price: product.price + markUp,
-                count: 1,
-                property
-            })
+    addProductToBasket(product) {
+        console.log(product)
+        // const markUp = this.calculateMarkUp(product, property)
+        if (!this.cart.has(product.id)) {
+            this.cart.set(product.id, [])
         }
+        const newProduct = {
+            id: product.id,
+            price: product.price,
+            // изначально добавляем первую из списка опцию
+            property: product.property.map(p => ({id: p.id, name: p.name, option: p.options[0]}))
+        }
+        this.cart.get(product.id).push(newProduct);
+        // this.cart.get(product.id).count += 1;
+        // this.cart.get(product.id).price = (product.price + markUp)*(this.cart.get(product.id).count);
+        // this.cart.get(product.id).property = property;
+        // if (this.cart.has(product.id)) {
+        //     this.cart.get(product.id).count += 1;
+        //     this.cart.get(product.id).price = (product.price + markUp)*(this.cart.get(product.id).count);
+        //     this.cart.get(product.id).property = property;
+        // } else {
+        //     this.cart.get(product.id)
+        //     this.cart.set(product.id, {
+        //         id: product.id,
+        //         price: product.price + markUp,
+        //         count: 1,
+        //         property
+        //     })
+        // }
     }
 
     /**
-     * @param {{
-    *             id: number;
-    *             group: string;
-    *             name: string;
-    *             property: {
-    *                 name: string;
-    *                 options: {
-    *                     key: string;
-    *                     value: string;
-    *                     markUp: number;
-    *                         }[]
-    *                     }[];
-    *             price: number;
-    *             image: string;
-    *             cookingTime: string
-    *         }} product
-    *  @param {{key: string; name: string}[]} property
+     * @param {number} product
+    *  @param {{key: string; name: string}[] | undefined} property
     * */
-    removeProductFromBasket(product, property) {
-        const markUp = this.calculateMarkUp(product, property)
-        if (this.cart.has(product.id)) {
-            this.cart.get(product.id).count -= 1;
-            this.cart.get(product.id).price = (product.price + markUp)*(this.cart.get(product.id).count);
-            this.cart.get(product.id).property = property;
+    removeProductFromBasket(product, property = undefined) {
+        if (!this.cart.has(product)) {
+            return;
         }
+        if (property === undefined) {
+            this.cart.delete(product);
+        }
+        // const markUp = this.calculateMarkUp(product, property)
+        // if (this.cart.has(product.id)) {
+        //     this.cart.get(product.id).count -= 1;
+        //     this.cart.get(product.id).price = (product.price + markUp)*(this.cart.get(product.id).count);
+        //     this.cart.get(product.id).property = property;
+        // }
     }
 
     calculateMarkUp(product, property) {
