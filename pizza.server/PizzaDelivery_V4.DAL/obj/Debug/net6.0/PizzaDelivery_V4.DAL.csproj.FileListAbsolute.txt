@@ -1,0 +1,15 @@
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V4.DAL\obj\Debug\net6.0\PizzaDelivery_V4.DAL.csproj.AssemblyReference.cache
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V4.DAL\obj\Debug\net6.0\PizzaDelivery_V4.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V4.DAL\obj\Debug\net6.0\PizzaDelivery_V4.DAL.AssemblyInfoInputs.cache
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V4.DAL\obj\Debug\net6.0\PizzaDelivery_V4.DAL.AssemblyInfo.cs
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V4.DAL\obj\Debug\net6.0\PizzaDelivery_V4.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V4.DAL\bin\Debug\net6.0\PizzaDelivery_V4.DAL.deps.json
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V4.DAL\bin\Debug\net6.0\PizzaDelivery_V4.DAL.dll
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V4.DAL\bin\Debug\net6.0\PizzaDelivery_V4.DAL.pdb
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V4.DAL\bin\Debug\net6.0\PizzaDelivery_V4.Domain.dll
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V4.DAL\bin\Debug\net6.0\PizzaDelivery_V4.Domain.pdb
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V4.DAL\obj\Debug\net6.0\PizzaDelivery_V4.DAL.csproj.CopyComplete
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V4.DAL\obj\Debug\net6.0\PizzaDelivery_V4.DAL.dll
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V4.DAL\obj\Debug\net6.0\refint\PizzaDelivery_V4.DAL.dll
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V4.DAL\obj\Debug\net6.0\PizzaDelivery_V4.DAL.pdb
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V4.DAL\obj\Debug\net6.0\ref\PizzaDelivery_V4.DAL.dll

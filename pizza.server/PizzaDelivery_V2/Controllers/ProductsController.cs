@@ -20,7 +20,33 @@ namespace DAL.Controllers
         public async Task<ActionResult> GetProducts()
         {
             var response = await _productService.GetProducts();
-            return Ok(response);
+            if (response.StatusCode == PizzaDelivery_V2.Domain.Enum.StatusCode.OK)
+            {
+                return Ok(response);
+            }
+            return RedirectToAction("Error");
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult> GetProductById(int id)
+        {
+            var response = await _productService.GetProductById(id);
+            if (response.StatusCode == PizzaDelivery_V2.Domain.Enum.StatusCode.OK)
+            {
+                return Ok(response);
+            }
+            return RedirectToAction("Error");
+        }
+
+        [HttpGet("{name}")]
+        public async Task<ActionResult> GetProductByName(string name)
+        {
+            var response = await _productService.GetProductByName(name);
+            if (response.StatusCode == PizzaDelivery_V2.Domain.Enum.StatusCode.OK)
+            {
+                return Ok(response);
+            }
+            return RedirectToAction("Error");
         }
         /*
         [HttpGet("/{id}")]

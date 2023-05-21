@@ -8,15 +8,16 @@ namespace DAL;
 public class Program
 {
     public static void Main(string[] args)
-    {
+    {/*
         using (ApplicationContext db = new ApplicationContext())
         {
+            
             var orders = db.Client.ToArray();
             foreach (Client u in orders)
             {
                 Console.WriteLine(u.Id + " - " + u.Role);
             }
-        }
+        }*/
         CreateHostBuilder(args).Build().Run();
         
     }

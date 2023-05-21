@@ -21,6 +21,52 @@ namespace PizzaDelivery_V2.BLL.Implementations
             _productRepository = productRepository;
         }
 
+        public async Task<IBaseResponse<Product>> GetProductByName(string name)
+        {
+            var baseResponse = new BaseResponse<Product>();
+            try
+            {
+                var product = await _productRepository.GetEntityByName(name);
+                if (product == null)
+                {
+                    baseResponse.Description = "Product not found";
+                    return baseResponse;
+                }
+                return baseResponse;
+            }
+            catch (Exception ex)
+            {
+                return new BaseResponse<Product>()
+                {
+                    Description = $"[GetProductById] : {ex.Message}",
+                    StatusCode = StatusCode.InternalServerError
+                };
+            }
+        }
+
+        public async Task<IBaseResponse<Product>> GetProductById(int id)
+        {
+            var baseResponse = new BaseResponse<Product>();
+            try
+            {
+                var product = await _productRepository.GetEntityById(id);
+                if (product == null)
+                {
+                    baseResponse.Description = "Product not found";
+                    return baseResponse;
+                }
+                return baseResponse;
+            } 
+            catch (Exception ex)
+            {
+                return new BaseResponse<Product>()
+                {
+                    Description = $"[GetProductById] : {ex.Message}",
+                    StatusCode = StatusCode.InternalServerError
+                };
+            }
+        }
+
         public async Task<IBaseResponse<IEnumerable<Product>>> GetProducts()
         {
             var baseResponse = new BaseResponse<IEnumerable<Product>>();
