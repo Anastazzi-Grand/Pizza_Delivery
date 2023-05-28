@@ -1,0 +1,12 @@
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V4.Entities\bin\Debug\net6.0\PizzaDelivery_V4.Entities.deps.json
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V4.Entities\bin\Debug\net6.0\PizzaDelivery_V4.Entities.dll
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V4.Entities\bin\Debug\net6.0\PizzaDelivery_V4.Entities.pdb
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V4.Entities\obj\Debug\net6.0\PizzaDelivery_V4.Entities.csproj.AssemblyReference.cache
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V4.Entities\obj\Debug\net6.0\PizzaDelivery_V4.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V4.Entities\obj\Debug\net6.0\PizzaDelivery_V4.Entities.AssemblyInfoInputs.cache
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V4.Entities\obj\Debug\net6.0\PizzaDelivery_V4.Entities.AssemblyInfo.cs
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V4.Entities\obj\Debug\net6.0\PizzaDelivery_V4.Entities.csproj.CoreCompileInputs.cache
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V4.Entities\obj\Debug\net6.0\PizzaDelivery_V4.Entities.dll
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V4.Entities\obj\Debug\net6.0\refint\PizzaDelivery_V4.Entities.dll
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V4.Entities\obj\Debug\net6.0\PizzaDelivery_V4.Entities.pdb
+C:\Users\Anastazzi\Documents\4 семестр\Курсач\pizza.server\PizzaDelivery_V4.Entities\obj\Debug\net6.0\ref\PizzaDelivery_V4.Entities.dll

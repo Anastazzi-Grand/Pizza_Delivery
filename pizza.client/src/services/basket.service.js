@@ -21,7 +21,7 @@ export class BasketService {
         this.cart.forEach(value => {
             result.count += value.length;
             value.forEach(p => {
-                result.sum += (p.price + p.property.reduce((sum, pr) => sum += pr.option.markUp, 0));
+                result.sum += (p.price + (p?.property ? p.property.reduce((sum, pr) => sum += pr.option.markUp, 0) : 0));
             })
         });
         return result;
@@ -55,7 +55,7 @@ export class BasketService {
             id: product.id,
             price: product.price,
             // изначально добавляем первую из списка опцию
-            property: product.property.map(p => ({id: p.id, name: p.name, option: p.options[0]}))
+            property: product?.property ? product.property.map(p => ({id: p.id, name: p.name, option: p.options[0]})) : null
         }
         this.cart.get(product.id).push(newProduct);
         // this.cart.get(product.id).count += 1;

@@ -1,22 +1,98 @@
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
-using PizzaDelivery_V4.DAL;
-using PizzaDelivery_V4.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
+using PizzaDelivery_V4;
 
-namespace PizzaDelivery_V4;
 
-public class Program
+
+
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddSession();
+builder.Services.AddDistributedMemoryCache();
+
+// Add services to the container.
+builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<PDDbContext>(options =>
+    options.UseSqlServer(builder.Configuration
+    .GetConnectionString("MvcPizzaConnectionString")));
+
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+/*
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<EmployeeDAL>();
+builder.Services.AddScoped<PostDAL>();
+builder.Services.AddScoped<ProductDAL>();
+builder.Services.AddScoped<ServiceDAL>();
+builder.Services.AddScoped<SkladDAL>();
+builder.Services.AddScoped<StoreAddressDAL>();
+builder.Services.AddScoped<ZakazDAL>();
+
+ //services.AddScoped<IProductRepository, ProductRepository>();
+ //services.AddScoped<IProductService, ProductService>();*/
+
+builder.Services.AddSwaggerGen(page =>
 {
-    public static void Main(string[] args)
+    page.SwaggerDoc("v1", new OpenApiInfo
     {
-        CreateHostBuilder(args).Build().Run();
+        Version = "v1",
+        Title = "ToDo API",
+        Description = "An ASP.NET Core Web API for managing ToDo items",
+        TermsOfService = new Uri("https://example.com/terms"),
+        Contact = new OpenApiContact
+        {
+            Name = "Example Contact",
+            Url = new Uri("https://example.com/contact")
+        },
+        License = new OpenApiLicense
+        {
+            Name = "Example License",
+            Url = new Uri("https://example.com/license")
+        }
+    });
+    page.SwaggerDoc("client", new OpenApiInfo { Title = "client", Version = "v1" });
+    page.SwaggerDoc("employee", new OpenApiInfo { Title = "delivery", Version = "v1" });
+    page.SwaggerDoc("post", new OpenApiInfo { Title = "employee", Version = "v1" });
+    page.SwaggerDoc("product", new OpenApiInfo { Title = "order", Version = "v1" });
+    page.SwaggerDoc("service", new OpenApiInfo { Title = "orderItems", Version = "v1" });
+    page.SwaggerDoc("sklad", new OpenApiInfo { Title = "product", Version = "v1" });
+    page.SwaggerDoc("storeAddress", new OpenApiInfo { Title = "productOptions", Version = "v1" });
+    page.SwaggerDoc("zakaz", new OpenApiInfo { Title = "productProperties", Version = "v1" });
+});
 
-    }
+var app = builder.Build();
 
-    public static IHostBuilder CreateHostBuilder(string[] args) =>
-        Host.CreateDefaultBuilder(args)
-            .ConfigureWebHostDefaults(webBuilder =>
-            {
-                webBuilder.UseStartup<Startup>();
-            });
+app.UseSession();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+
+    app.UseSwagger(options =>
+    {
+        options.SerializeAsV2 = true;
+    });
+
+    app.UseSwaggerUI(page =>
+    {
+        page.SwaggerEndpoint("/swagger/client/swagger.json", "client");
+        page.SwaggerEndpoint("/swagger/delivery/swagger.json", "delivery");
+        page.SwaggerEndpoint("/swagger/employee/swagger.json", "employee");
+        page.SwaggerEndpoint("/swagger/order/swagger.json", "order");
+        page.SwaggerEndpoint("/swagger/orderItems/swagger.json", "orderItems");
+        page.SwaggerEndpoint("/swagger/product/swagger.json", "product");
+        page.SwaggerEndpoint("/swagger/productOptions/swagger.json", "productOptions");
+        page.SwaggerEndpoint("/swagger/productProperties/swagger.json", "productProperties");
+        page.RoutePrefix = string.Empty;
+    });
 }
+
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+
+app.UseRouting();
+
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.Run();

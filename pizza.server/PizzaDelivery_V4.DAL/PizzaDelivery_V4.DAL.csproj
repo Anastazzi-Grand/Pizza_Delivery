@@ -13,7 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PizzaDelivery_V4.Domain\PizzaDelivery_V4.Domain.csproj" />
+    <ProjectReference Include="..\PizzaDelivery_V4.Domain2\PizzaDelivery_V4.Domain2.csproj" />
+    <ProjectReference Include="..\PizzaDelivery_V4.Entities\PizzaDelivery_V4.Entities.csproj" />
+    <ProjectReference Include="..\PizzaDelivery_V4\PizzaDelivery_V4.csproj" />
   </ItemGroup>
 
 </Project>
