@@ -7,6 +7,8 @@ import EmployeesPage from '@/pages/EmployeesPage.vue';
 import UsersPage from '@/pages/UsersPage.vue';
 import OrdersPage from '@/pages/OrdersPage.vue';
 import NotFoundPage from '@/pages/NotFoundPage.vue';
+import OrdersCreate from '@/components/OrdersCreate.vue';
+import OrdersView from '@/components/OrdersView.vue';
 
 const routes = [
     {
@@ -31,7 +33,7 @@ const routes = [
         path: '/order/:id',
         name: 'OrderDetails',
         component: OrderPage,
-        meta: { requiresAuth: true },
+        meta: { requiresAuth: false },
     },
     {
         path: '/employees',
@@ -49,7 +51,19 @@ const routes = [
         path: '/orders',
         name: 'Orders',
         component: OrdersPage,
-        meta: { requiresAuth: true, requiresAdmin: true },
+        children: [
+            {
+                path: "",
+                name: "OrdersView",
+                component: OrdersView
+            },
+            {
+                path: "create",
+                name: "OrdersCreate",
+                component: OrdersCreate
+            }
+        ]
+        // meta: { requiresAuth: true, requiresAdmin: true },
     },
     {
         path: '/:pathMatch(.*)*',

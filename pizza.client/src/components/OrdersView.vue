@@ -1,11 +1,10 @@
 <template>
-  <p>ЗАКАЗЫ</p>
-  <router-view/>
+  <p>Список заказов</p>
 </template>
 
 <script>
 export default {
-  name: 'OrdersPage'
+  name: 'OrdersView'
 }
 </script>
 

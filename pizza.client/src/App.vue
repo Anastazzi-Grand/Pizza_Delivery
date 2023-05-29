@@ -17,6 +17,7 @@ import { config } from '@/config';
 import { MockDataService } from '@/services/data.service/mock.data.service';
 import { DataService } from '@/services/data.service/data.service';
 import { BasketService } from './services/basket.service';
+import { OrderService } from '@/services/order.service';
 
 
 export default {
@@ -29,7 +30,8 @@ export default {
   provide() {
     return {
       dataService: config.demo ? new MockDataService() : new DataService(),
-      basket: new BasketService()
+      basket: new BasketService(),
+      orderService: new OrderService()
     }
   }
 }

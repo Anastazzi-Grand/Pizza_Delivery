@@ -1,1 +1,1 @@
-export const config = {demo:false}
+export const config = {demo:true}

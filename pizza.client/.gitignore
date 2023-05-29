@@ -18,6 +18,7 @@ pnpm-debug.log*
 .vscode
 *.suo
 *.ntvs*
+
 *.njsproj
 *.sln
 *.sw?
