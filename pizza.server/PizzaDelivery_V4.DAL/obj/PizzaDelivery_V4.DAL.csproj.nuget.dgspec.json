@@ -28,8 +28,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery_V4.Domain\\PizzaDelivery_V4.Domain.csproj": {
-                "projectPath": "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery_V4.Domain\\PizzaDelivery_V4.Domain.csproj"
+              "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery_V4.Domain2\\PizzaDelivery_V4.Domain2.csproj": {
+                "projectPath": "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery_V4.Domain2\\PizzaDelivery_V4.Domain2.csproj"
+              },
+              "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery_V4.Entities\\PizzaDelivery_V4.Entities.csproj": {
+                "projectPath": "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery_V4.Entities\\PizzaDelivery_V4.Entities.csproj"
+              },
+              "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery_V4\\PizzaDelivery_V4.csproj": {
+                "projectPath": "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery_V4\\PizzaDelivery_V4.csproj"
               }
             }
           }
@@ -76,14 +82,14 @@
         }
       }
     },
-    "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery_V4.Domain\\PizzaDelivery_V4.Domain.csproj": {
+    "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery_V4.Domain2\\PizzaDelivery_V4.Domain2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery_V4.Domain\\PizzaDelivery_V4.Domain.csproj",
-        "projectName": "PizzaDelivery_V4.Domain",
-        "projectPath": "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery_V4.Domain\\PizzaDelivery_V4.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery_V4.Domain2\\PizzaDelivery_V4.Domain2.csproj",
+        "projectName": "PizzaDelivery_V4.Domain2",
+        "projectPath": "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery_V4.Domain2\\PizzaDelivery_V4.Domain2.csproj",
         "packagesPath": "C:\\Users\\Anastazzi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery_V4.Domain\\obj\\",
+        "outputPath": "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery_V4.Domain2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Anastazzi\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -112,29 +118,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Microsoft.AspNet.Mvc": {
+            "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[5.2.9, )"
-            },
-            "Microsoft.AspNetCore.Mvc.Core": {
-              "target": "Package",
-              "version": "[2.2.5, )"
-            },
-            "Microsoft.Extensions.Configuration": {
-              "target": "Package",
-              "version": "[6.0.0, )"
-            },
-            "System.Net.Http": {
-              "target": "Package",
-              "version": "[4.3.4, )"
-            },
-            "System.Text.Json": {
-              "target": "Package",
-              "version": "[6.0.6, )"
-            },
-            "System.Threading.Tasks.Extensions": {
-              "target": "Package",
-              "version": "[4.5.4, )"
+              "version": "[6.2.3, )"
             }
           },
           "imports": [
@@ -148,6 +134,144 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery_V4.Entities\\PizzaDelivery_V4.Entities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery_V4.Entities\\PizzaDelivery_V4.Entities.csproj",
+        "projectName": "PizzaDelivery_V4.Entities",
+        "projectPath": "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery_V4.Entities\\PizzaDelivery_V4.Entities.csproj",
+        "packagesPath": "C:\\Users\\Anastazzi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery_V4.Entities\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Anastazzi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery_V4\\PizzaDelivery_V4.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery_V4\\PizzaDelivery_V4.csproj",
+        "projectName": "PizzaDelivery_V4",
+        "projectPath": "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery_V4\\PizzaDelivery_V4.csproj",
+        "packagesPath": "C:\\Users\\Anastazzi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery_V4\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Anastazzi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery_V4.DAL": {
+                "projectPath": "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery_V4.DAL"
+              },
+              "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery_V4.Domain2\\PizzaDelivery_V4.Domain2.csproj": {
+                "projectPath": "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery_V4.Domain2\\PizzaDelivery_V4.Domain2.csproj"
+              },
+              "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery_V4.Entities\\PizzaDelivery_V4.Entities.csproj": {
+                "projectPath": "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery_V4.Entities\\PizzaDelivery_V4.Entities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.3, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
