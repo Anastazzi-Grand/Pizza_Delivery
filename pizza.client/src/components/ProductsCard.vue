@@ -1,6 +1,6 @@
 <template>
   <div class="card" style="width: 18rem;">
-    <img :src="product.image" class="card-img-top" :alt="product.group">
+    <img :src="product.image" class="card-img-top">
     <div class="card-body">
       <h5 class="card-title">{{ product.name }}</h5>
       <button v-if="!basket.cart.get(product.id)?.length" type="button" class="btn btn-primary w-100" @click="basket.addProductToBasket(product)">Выбрать</button>

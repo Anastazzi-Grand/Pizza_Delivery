@@ -4,7 +4,7 @@ using PizzaDelivery_V5.Entities.Entities;
 namespace PizzaDelivery_V5.BLL.Controllers
 {
     [ApiController]
-    [Route("DAL/products")]
+    [Route("api")]
     public class ProductsController : Controller
     {
         private readonly string? _dalConnectionString;
@@ -16,10 +16,10 @@ namespace PizzaDelivery_V5.BLL.Controllers
             _client = new HttpClient();
         }
 
-        [HttpGet("")]
+        [HttpGet("products")]
         public async Task<ActionResult<Product[]>> GetProducts()
         {
-            var response = await _client.GetAsync($"{_dalConnectionString}/products");
+            var response = await _client.GetAsync($"{_dalConnectionString}/api/DAL/Product/ProductList");
             response.EnsureSuccessStatusCode();
             var result = await response.Content.ReadFromJsonAsync<Product[]>() ?? Array.Empty<Product>();
             return result;

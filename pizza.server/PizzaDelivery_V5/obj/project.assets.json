@@ -2078,9 +2078,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery_V5\\PizzaDelivery_V5.csproj",
-      "projectName": "PizzaDelivery_V5",
-      "projectPath": "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery_V5\\PizzaDelivery_V5.csproj",
+      "projectUniqueName": "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery_V5\\PizzaDelivery_V5.DAL.csproj",
+      "projectName": "PizzaDelivery_V5.DAL",
+      "projectPath": "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery_V5\\PizzaDelivery_V5.DAL.csproj",
       "packagesPath": "C:\\Users\\Anastazzi\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Anastazzi\\Documents\\4 семестр\\Курсач\\pizza.server\\PizzaDelivery_V5\\obj\\",
       "projectStyle": "PackageReference",

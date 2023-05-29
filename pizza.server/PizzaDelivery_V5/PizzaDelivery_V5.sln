@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaDelivery_V5", "PizzaDelivery_V5.csproj", "{1C77D132-7A3F-4AB1-A0AC-A6B6F7BE5E9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaDelivery_V5.DAL", "PizzaDelivery_V5.DAL.csproj", "{1C77D132-7A3F-4AB1-A0AC-A6B6F7BE5E9E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaDelivery_V5.Entities", "..\PizzaDelivery_Entities\PizzaDelivery_V5.Entities.csproj", "{343E6EF6-A880-4BD0-9DD5-9A935E3C8D2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaDelivery_V5.BLL", "..\PizzaDelivery_V5.Domain\PizzaDelivery_V5.BLL.csproj", "{A2516BCD-B3E4-491D-AF04-1E9A18001A3B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaDelivery_V5.BLL", "..\PizzaDelivery_V5.Domain\PizzaDelivery_V5.BLL.csproj", "{A2516BCD-B3E4-491D-AF04-1E9A18001A3B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

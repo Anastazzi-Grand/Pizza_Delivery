@@ -5,7 +5,7 @@ using PizzaDelivery_V5.Repositories.Interfaces;
 namespace PizzaDelivery_V5.Controllers
 {
     [ApiController]
-    [Route("/products")]
+    [Route("api/DAL/Product")]
     public class ProductsController : ControllerBase
     {
         private readonly ILogger<ProductsController> _logger;
@@ -17,13 +17,15 @@ namespace PizzaDelivery_V5.Controllers
             _productRepository = productRepository;
         }
 
-        [HttpGet("")]
+        [HttpGet("ProductList")]
         public async Task<IActionResult> ProductList()
         {
-            var product = await _productRepository.Get();
-            if (product == null) return NotFound();
-            return Ok(product);
+            var products = await _productRepository.Get();
+            if (products == null || !products.Any()) return NotFound();
+
+            return Ok(products);
         }
+
 
         [HttpGet("12345")]
         public async Task<IActionResult> ProductGet(int id)
@@ -32,7 +34,7 @@ namespace PizzaDelivery_V5.Controllers
             return Ok(product);
         }
 
-        [HttpGet("name")]
+        [HttpGet("search")]
         public async Task<IActionResult> ProductGet(string name)
         {
             var product = await _productRepository.GetByNameEntity(name);

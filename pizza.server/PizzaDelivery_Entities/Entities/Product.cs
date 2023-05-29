@@ -23,8 +23,6 @@ namespace PizzaDelivery_V5.Entities.Entities
         public string CookingTime { get; set; }
 
         public byte[] Image { get; set; }
-
-        public List<ProductProperties> Properties { get; set; }
         
     }
 }

@@ -4,7 +4,7 @@ import axios from 'axios';
 export class DataService extends AbstractDataService {
     async getProducts(){
         console.log('getProducts')
-        return axios.get('DAL/products')
+        return axios.get('api/products')
         .then(res => {console.log(res.data); return res.data}).catch(err => console.error(err));
     }
     async gerOrders(){}

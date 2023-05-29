@@ -41,13 +41,11 @@ builder.Services.AddSwaggerGen(page =>
         }
     });
     page.SwaggerDoc("client", new OpenApiInfo { Title = "client", Version = "v1" });
-    page.SwaggerDoc("employee", new OpenApiInfo { Title = "delivery", Version = "v1" });
-    page.SwaggerDoc("post", new OpenApiInfo { Title = "employee", Version = "v1" });
-    page.SwaggerDoc("product", new OpenApiInfo { Title = "order", Version = "v1" });
-    page.SwaggerDoc("service", new OpenApiInfo { Title = "orderItems", Version = "v1" });
-    page.SwaggerDoc("sklad", new OpenApiInfo { Title = "product", Version = "v1" });
-    page.SwaggerDoc("storeAddress", new OpenApiInfo { Title = "productOptions", Version = "v1" });
-    page.SwaggerDoc("zakaz", new OpenApiInfo { Title = "productProperties", Version = "v1" });
+    page.SwaggerDoc("employee", new OpenApiInfo { Title = "employee", Version = "v1" });
+    page.SwaggerDoc("order", new OpenApiInfo { Title = "order", Version = "v1" });
+    page.SwaggerDoc("orderItems", new OpenApiInfo { Title = "orderItems", Version = "v1" });
+    page.SwaggerDoc("product", new OpenApiInfo { Title = "product", Version = "v1" });
+    page.SwaggerDoc("productProperties", new OpenApiInfo { Title = "productProperties", Version = "v1" });
 });
 
 var app = builder.Build();

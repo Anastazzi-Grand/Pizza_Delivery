@@ -5,7 +5,7 @@ using PizzaDelivery_V5.Repositories.Interfaces;
 namespace PizzaDelivery_V5.Controllers
 {
     [ApiController]
-    [Route("/employees")]
+    [Route("api/DAL/employees")]
     public class EmployeesController : ControllerBase
     {
         private readonly ILogger<EmployeesController> _logger;

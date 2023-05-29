@@ -18,7 +18,5 @@ namespace PizzaDelivery_V5.Entities.Entities
         public string PropertyName { get; set; }
 
         public decimal? Markup { get; set; }
-
-        public Product? Product { get; set; }
     }
 }

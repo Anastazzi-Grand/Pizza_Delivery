@@ -47,6 +47,14 @@ namespace PizzaDelivery_V5.Repositories.EntitiesRepository
             throw new NotImplementedException();
         }
 
+
+
+        public async Task<Product> GetByNameEntity(string name)
+        {
+            var lowerName = name.ToLower();
+            return await _db.Product.FirstOrDefaultAsync(p => p.Name.ToLower() == lowerName);
+        }
+
         public async Task<Product> Update(Product product)
         {
             var result = _db.Product.Update(product);
@@ -54,9 +62,5 @@ namespace PizzaDelivery_V5.Repositories.EntitiesRepository
             return result.Entity;
         }
 
-        async Task<Product> IEntityRepository<Product>.GetByNameEntity(string name)
-        {
-            return await _db.Product.FirstOrDefaultAsync(p => p.Name == name);
-        }
     }
 }
