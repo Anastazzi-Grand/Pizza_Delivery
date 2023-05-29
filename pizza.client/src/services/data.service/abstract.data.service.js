@@ -4,6 +4,49 @@
  */
 export class AbstractDataService {
     /**
+     * @type {{
+     *             id: number;
+     *             group: string;
+     *             name: string;
+     *             property: {
+     *                 name: string;
+     *                 options: {
+     *                     key: string;
+     *                     value: string;
+     *                     markUp: number;
+     *                         }
+     *                     }[];
+     *             price: number;
+     *             image: string;
+     *             coockingTime: string
+     *         }[]}
+     * */
+    products;
+
+    /**
+     * Получение продукта по id
+     *
+     * @param {number} id
+     * @return {{
+     *             id: number;
+     *             group: string;
+     *             name: string;
+     *             property: {
+     *                 name: string;
+     *                 options: {
+     *                     key: string;
+     *                     value: string;
+     *                     markUp: number;
+     *                         }
+     *                     }[];
+     *             price: number;
+     *             image: string;
+     *             coockingTime: string
+     *         }}
+     * */
+    // eslint-disable-next-line no-unused-vars
+    getProductsById(id = null) {}
+    /**
      * Получение продуктов из каталога
      * @returns{Promise<{
             id: number;
@@ -23,15 +66,7 @@ export class AbstractDataService {
         }[]>}
      */
     async getProducts(){}
-    /** 
-     * Оформление заказа
-     * @param {{id:number; count:number; property:{key:string,value:string}[]}[]} order 
-     */
-    async createOrder(order){
-        return new Promise((res) => {
-            return res(console.log(order))
-        })
-    }
+
     /**
      * Получение заказов
      * @returns{{status:string; dateOfOrder:string; dateOfExecution:string; payment:string}[]}

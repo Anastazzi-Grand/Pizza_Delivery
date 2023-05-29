@@ -2,7 +2,7 @@ import { reactive } from 'vue';
 
 export class BasketService {
     /**
-     * @type Map<number, {id: number; price: number; property: {id: number; name: string, option: {key: string, value: string, markUp: number}}[]}[]>
+     * @type {Map<number, Array<{id: number; price: number; property: {id: number; name: string, option: {key: string, value: string, markUp: number}}[]}>>}
      * */
     cart = reactive(new Map());
 

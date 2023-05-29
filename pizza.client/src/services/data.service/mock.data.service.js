@@ -1,6 +1,32 @@
 import { AbstractDataService } from './abstract.data.service';
 
 export class MockDataService extends AbstractDataService {
+    /**
+     * @type {{
+     *             id: number;
+     *             group: string;
+     *             name: string;
+     *             property: {
+     *                 name: string;
+     *                 options: {
+     *                     key: string;
+     *                     value: string;
+     *                     markUp: number;
+     *                         }
+     *                     }[];
+     *             price: number;
+     *             image: string;
+     *             coockingTime: string
+     *         }[]}
+     * */
+    #products = null;
+    get products() {
+        return this.#products;
+    }
+
+    getProductsById(id) {
+        return this.#products.find(p => p.id === id);
+    }
     async getProducts() {
         return new Promise((resolve) => {
             setTimeout(() => {
@@ -148,16 +174,13 @@ export class MockDataService extends AbstractDataService {
                         cookingTime: '20 мин'
                     }]);
             }, 300);
+        }).then(data => {
+            this.#products = data;
+            return data;
         });
     }
 
     async gerOrders() {
 
-    }
-
-    async createOrder(order) {
-        return new Promise((res) => {
-            return res(console.log(order))
-        })
     }
 }

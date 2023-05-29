@@ -29,7 +29,6 @@ export default {
   },
   created() {
     this.dataService.getProducts().then(data => {
-      console.log('this.dataService.getProducts')
       this.catalog = data;
     })
   },
