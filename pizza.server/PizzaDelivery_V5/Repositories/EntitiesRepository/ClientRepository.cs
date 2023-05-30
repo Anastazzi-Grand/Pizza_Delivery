@@ -18,11 +18,18 @@ namespace PizzaDelivery_V5.Repositories.EntitiesRepository
         {
             _db = db;
         }
-        public async Task<Client> Add(Client client)
+        public async Task<Client> Add(Client newClient)
         {
-            var result = await _db.Client.AddAsync(client);
+            var client = new Client()
+            {
+                FullName = newClient.FullName,
+                Address = newClient.Address,
+                PhoneNumber = newClient.PhoneNumber,
+                Password = newClient.Password
+            };
+            await _db.Client.AddAsync(client);
             await _db.SaveChangesAsync();
-            return result.Entity;
+            return client;
         }
 
         public async Task<bool> Delete(int id)

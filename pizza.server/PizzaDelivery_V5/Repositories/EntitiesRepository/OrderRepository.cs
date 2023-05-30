@@ -17,11 +17,33 @@ namespace PizzaDelivery_V5.Repositories.EntitiesRepository
         {
             _db = db;
         }
-        public async Task<Order> Add(Order order)
+        public async Task<Order> Add(Order newOrder)
         {
-            var result = await _db.Order.AddAsync(order);
+            Order order = new Order()
+            {
+                FullName = newOrder.FullName,
+                PhoneNumber = newOrder.PhoneNumber,
+                Address = newOrder.Address,
+                OrderDate = newOrder.OrderDate,
+                TotalPrice = newOrder.TotalPrice,
+                DeliveryDate = newOrder.DeliveryDate,
+                ClientId = newOrder.ClientId
+            };
+
+            foreach (var item in newOrder.OrderItems)
+            {
+                OrderItems orderItem = new OrderItems
+                {
+                    ProductId = item.ProductId,
+                    OrderId = order.Id
+                };
+                _db.OrderItems.Add(orderItem);
+            }
+
+            await _db.Order.AddAsync(newOrder);
             await _db.SaveChangesAsync();
-            return result.Entity;
+
+            return order;
         }
 
         public async Task<bool> Delete(int id)

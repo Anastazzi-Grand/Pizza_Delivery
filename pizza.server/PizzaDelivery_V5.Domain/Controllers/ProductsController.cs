@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PizzaDelivery_V5.Entities.Entities;
+using System.Text.Json;
 
 namespace PizzaDelivery_V5.BLL.Controllers
 {
@@ -28,11 +29,11 @@ namespace PizzaDelivery_V5.BLL.Controllers
         [HttpGet("products/search")]
         public async Task<ActionResult<Product[]>> GetProductByName(string? name)
         {
-            var response = await _client.GetAsync($"{_dalConnectionString}/api/DAL/Product/search?name={name}");
+            var response = await _client.GetAsync($"{_dalConnectionString}/api/DAL/Product/ProductList?name={name}");
             response.EnsureSuccessStatusCode();
             var result = await response.Content.ReadFromJsonAsync<Product[]>() ?? Array.Empty<Product>();
             if (string.IsNullOrWhiteSpace(name)) return result;
-            return Array.FindAll(result, p => !string.IsNullOrWhiteSpace(p.Name) && p.Name.Contains(name));
+            return result.Where(p => !string.IsNullOrWhiteSpace(p.Name) && p.Name.IndexOf(name, StringComparison.OrdinalIgnoreCase) >= 0).ToArray();
         }
     }
 }

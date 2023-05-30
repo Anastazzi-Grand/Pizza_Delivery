@@ -10,10 +10,9 @@ export class OrderService {
      * order: {
      *     orderCreateDate: string;
      *     deliveryDate: string;
-     *     totalSum: number;
+     *     totalPrice: number;
      *     products: {
      *         id: number;
-     *         price: number;
      *     }[];
      *  }
      * }} data

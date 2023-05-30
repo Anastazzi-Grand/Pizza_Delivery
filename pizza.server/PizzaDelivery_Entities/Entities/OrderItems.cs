@@ -15,5 +15,7 @@ namespace PizzaDelivery_V5.Entities.Entities
         public int ProductId { get; set; }
 
         public int OrderId { get; set; }
+        public Order? Orders { get; set; }
+        public Product? Products { get; set; }
     }
 }

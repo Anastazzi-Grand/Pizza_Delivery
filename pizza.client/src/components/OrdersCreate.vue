@@ -59,12 +59,11 @@ export default {
             minute: '2-digit',
             second: '2-digit'
           }).format(new Date(new Date().setHours(new Date().getHours() + 1))),
-          totalSum: this.basket.total,
+          totalPrice: this.basket.total,
           // eslint-disable-next-line no-unused-vars
           products: Array.from(this.basket.cart).reduce((acc, [_, list]) => {
             list.forEach(p => acc.push({
-              id: p.id,
-              price: p.price
+              id: p.id
             }))
           }, [])
         }

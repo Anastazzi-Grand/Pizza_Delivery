@@ -23,5 +23,7 @@ namespace PizzaDelivery_V5.Entities.Entities
         public string CookingTime { get; set; }
 
         public string Image { get; set; }
+
+       // public List<OrderItems> OrderItems { get; set; }
     }
 }
