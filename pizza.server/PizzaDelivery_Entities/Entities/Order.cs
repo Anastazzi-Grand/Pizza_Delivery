@@ -12,21 +12,19 @@ namespace PizzaDelivery_V5.Entities.Entities
     {
         [Column("OrderNumber")]
         public int Id { get; set; }
+        public string FullName { get; set; }
 
-        public int ClientId { get; set; }
-        public DateTime OrderDate { get; set; }
+        public string PhoneNumber { get; set; }
 
-        public string Status { get; set; }
+        public string Address { get; set; }
 
-        public int CookEmployeeId { get; set; }
+        public string OrderDate { get; set; }
 
-        public int OperatorEmployeeId { get; set; }
+        public int TotalPrice { get; set; }
 
-        public int CourierEmployeeId { get; set; }
+        public string DeliveryDate { get; set; }
 
-        public decimal? TotalPrice { get; set; }
-
-        public Client? Client { get; set; }
+        public int? ClientId { get; set; }
 
     }
 }

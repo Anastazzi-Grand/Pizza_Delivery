@@ -18,13 +18,7 @@ namespace PizzaDelivery_V5.Entities.Entities
 
         public string PhoneNumber { get; set; }
 
-        public string Role { get; set; }
-
         public string PasswordHash { get; set; }
-
-        public string RefreshToken { get; set; }
-
-        public List<Order> Order { get; set; }
     }
     /*
     public abstract class ClientUseCase: Client
