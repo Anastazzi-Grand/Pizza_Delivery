@@ -3,7 +3,7 @@
   <div class="d-grid gap-2">
     <ProductCardByCart v-for="(productList, index) in basket.cart" v-bind:key="index" :products="productList[1]"/>
   </div>
-  <router-link class="btn btn-primary mb-4" to="orders/create">
+  <router-link class="btn btn-primary mt-4" to="orders/create">
     <span>Оформить заказ</span>
   </router-link>
 </template>

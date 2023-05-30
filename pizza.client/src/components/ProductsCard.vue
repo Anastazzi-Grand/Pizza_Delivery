@@ -1,5 +1,5 @@
 <template>
-  <div class="card" style="width: 18rem;">
+  <div class="card" style="width: 25rem;">
     <img :src="product.image" class="card-img-top">
     <div class="card-body">
       <h5 class="card-title">{{ product.name }}</h5>
