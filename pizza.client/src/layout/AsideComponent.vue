@@ -17,7 +17,7 @@ export default {
 }
 </script>
 <style>
-    .router-link-active {
+    .nav-link.router-link-active {
       font-weight: bold;
     }
 </style>

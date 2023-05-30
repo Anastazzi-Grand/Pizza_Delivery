@@ -1,10 +1,10 @@
 <template>
   <div class="card" style="width: 38rem;">
     <div class="row g-0">
-      <div class="col-md-4">
+      <div class="col-md-7">
         <img :src="details.image" class="img-fluid rounded-start" :alt="details.name">
       </div>
-      <div class="col-md-8">
+      <div class="col-md-5">
         <div class="card-body">
           <h5 class="card-title">{{ details.name }}</h5>
           <p>Цена {{ details.price }} рублей</p>

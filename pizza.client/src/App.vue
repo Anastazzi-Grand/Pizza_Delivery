@@ -2,8 +2,8 @@
   <Header/>
   <div class="container">
     <div class="row">
-      <Aside class="col-4 py-2"/>
-      <Main class="col-8 py-2"/>
+      <Aside class="col-2 py-2"/>
+      <Main class="col-10 py-2"/>
     </div>
   </div>
 
