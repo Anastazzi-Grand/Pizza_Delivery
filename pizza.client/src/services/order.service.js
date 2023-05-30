@@ -7,14 +7,12 @@ export class OrderService {
      * fullName: string;
      * phoneNumber: string;
      * address: string;
-     * order: {
-     *     orderCreateDate: string;
-     *     deliveryDate: string;
-     *     totalPrice: number;
-     *     products: {
-     *         id: number;
-     *     }[];
-     *  }
+     * orderDate: string;
+     * totalPrice: number;
+    *  deliveryDate: string;
+    *  productItems: {
+    *       productId:number;
+    *  }[];
      * }} data
      */
     async createOrder(data) {

@@ -32,14 +32,15 @@ namespace PizzaDelivery_V5.BLL.Controllers
         }
 
         [HttpPost("order")]
-        public async Task<Order?> PostOrder(Order newOrder)
+        public async Task<ActionResult<Order>> PostOrder(Order newOrder)
         {
             JsonContent content = JsonContent.Create(newOrder);
-            var response = await _client.PostAsync($"{_dalConnectionString}/api/DAL/orders/add", content);
-            response.EnsureSuccessStatusCode();
-            Order? order = await response.Content.ReadFromJsonAsync<Order>();
+            using var result = await _client.PostAsync($"{_dalConnectionString}/api/DAL/orders/add", content);
+            var dalOrder = await result.Content.ReadFromJsonAsync<Order>();
+            //Console.WriteLine($"{dalProduct?.Name}");
 
-            return order;
+            if (dalOrder == null) return BadRequest();
+            else return dalOrder;
         }
     }
 }

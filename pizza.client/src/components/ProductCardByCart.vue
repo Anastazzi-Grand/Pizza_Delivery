@@ -13,6 +13,8 @@
           <p>Время приготовления: {{ details.coockingTime }}</p>
           <button type="button" class="btn btn-primary w-100" @click="basket.addProductToBasket(details)">Добавить ещё
           </button>
+          <span></span>
+          <button type="button" class="btn btn-secondary w-100" @click="basket.removeProductFromBasket(this.products[0].id)">Удалить из заказа</button>
         </div>
       </div>
     </div>

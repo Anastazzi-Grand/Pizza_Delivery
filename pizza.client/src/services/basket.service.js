@@ -103,4 +103,8 @@ export class BasketService {
     }
     constructor() {}
 
+    clear() {
+        this.cart.clear()
+    }
+
 }

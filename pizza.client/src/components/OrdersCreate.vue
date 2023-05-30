@@ -4,7 +4,7 @@
     <input v-model="fullName" type="text" placeholder="Имя"/>
     <input v-model="phoneNumber" type="text" placeholder="Номер телефона"/>
     <input v-model="address" type="text" placeholder="Адрес"/>
-    <button type="submit" class="btn btn-primary w-100" @click="onSubmit">Заказать</button>
+    <button type="submit" class="btn btn-primary w-100">Заказать</button>
   </form>
 </template>
 
@@ -42,8 +42,7 @@ export default {
         fullName: this.fullName,
         phoneNumber: this.phoneNumber,
         address: this.address,
-        order: {
-          orderCreateDate: new Intl.DateTimeFormat('ru-RU', {
+     orderDate: new Intl.DateTimeFormat('ru-RU', {
             year: 'numeric',
             month: '2-digit',
             day: '2-digit',
@@ -59,17 +58,15 @@ export default {
             minute: '2-digit',
             second: '2-digit'
           }).format(new Date(new Date().setHours(new Date().getHours() + 1))),
-          //totalPrice: this.basket.total,
           totalPrice: this.basket.total.sum,
           // eslint-disable-next-line no-unused-vars
-          products: Array.from(this.basket.cart).reduce((acc, [_, list]) => {
+          orderItems: Array.from(this.basket.cart).reduce((acc, [_, list]) => {
             list.forEach(p => acc.push({
-              id: p.id
+              productId: p.id
             }))
             return acc;
           }, [])
-        }
-      }).then(data => console.log(data))
+      }).then(() => this.basket.clear())
     }
   }
 

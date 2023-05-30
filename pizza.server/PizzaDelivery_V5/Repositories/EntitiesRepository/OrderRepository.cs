@@ -18,16 +18,17 @@ namespace PizzaDelivery_V5.Repositories.EntitiesRepository
             _db = db;
         }
         public async Task<Order> Add(Order newOrder)
-        {
+        {/*
+            Console.WriteLine("public async Task<Order> Add(Order newOrder)  - " + newOrder);
             Order order = new Order()
             {
-                FullName = newOrder.FullName,
-                PhoneNumber = newOrder.PhoneNumber,
                 Address = newOrder.Address,
+                FullName = newOrder.FullName,
+                DeliveryDate = newOrder.DeliveryDate,
                 OrderDate = newOrder.OrderDate,
                 TotalPrice = newOrder.TotalPrice,
-                DeliveryDate = newOrder.DeliveryDate,
-                ClientId = newOrder.ClientId
+                PhoneNumber = newOrder.PhoneNumber
+                //ClientId = newOrder.ClientId
             };
 
             foreach (var item in newOrder.OrderItems)
@@ -37,13 +38,18 @@ namespace PizzaDelivery_V5.Repositories.EntitiesRepository
                     ProductId = item.ProductId,
                     OrderId = order.Id
                 };
-                _db.OrderItems.Add(orderItem);
+                await _db.OrderItems.AddAsync(orderItem);
             }
 
             await _db.Order.AddAsync(newOrder);
             await _db.SaveChangesAsync();
 
-            return order;
+            return order;*/
+            Console.WriteLine("public async Task<Order> Add(Order newOrder)  - " + newOrder);
+            var result = await _db.Order.AddAsync(newOrder);
+           // Console.WriteLine("public async Task<Order> Add(Order newOrder)  - " + newOrder);
+            await _db.SaveChangesAsync();
+            return result.Entity;
         }
 
         public async Task<bool> Delete(int id)
