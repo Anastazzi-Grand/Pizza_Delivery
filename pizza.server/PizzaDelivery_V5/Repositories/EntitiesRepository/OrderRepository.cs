@@ -18,38 +18,24 @@ namespace PizzaDelivery_V5.Repositories.EntitiesRepository
             _db = db;
         }
         public async Task<Order> Add(Order newOrder)
-        {/*
-            Console.WriteLine("public async Task<Order> Add(Order newOrder)  - " + newOrder);
-            Order order = new Order()
+        {
+            var user = await _db.Client.FirstOrDefaultAsync(u => u.PhoneNumber == newOrder.PhoneNumber);
+            if (user == null)
             {
-                Address = newOrder.Address,
-                FullName = newOrder.FullName,
-                DeliveryDate = newOrder.DeliveryDate,
-                OrderDate = newOrder.OrderDate,
-                TotalPrice = newOrder.TotalPrice,
-                PhoneNumber = newOrder.PhoneNumber
-                //ClientId = newOrder.ClientId
-            };
-
-            foreach (var item in newOrder.OrderItems)
-            {
-                OrderItems orderItem = new OrderItems
+                user = new Client()
                 {
-                    ProductId = item.ProductId,
-                    OrderId = order.Id
+                    PhoneNumber = newOrder.PhoneNumber,
+                    Address = newOrder.Address,
+                    FullName = newOrder.FullName,
                 };
-                await _db.OrderItems.AddAsync(orderItem);
+                await _db.Client.AddAsync(user);
+                await _db.SaveChangesAsync();
             }
 
-            await _db.Order.AddAsync(newOrder);
+            newOrder.ClientId = user.Id;
+            var order = await _db.Order.AddAsync(newOrder);
             await _db.SaveChangesAsync();
-
-            return order;*/
-            Console.WriteLine("public async Task<Order> Add(Order newOrder)  - " + newOrder);
-            var result = await _db.Order.AddAsync(newOrder);
-           // Console.WriteLine("public async Task<Order> Add(Order newOrder)  - " + newOrder);
-            await _db.SaveChangesAsync();
-            return result.Entity;
+            return order.Entity;
         }
 
         public async Task<bool> Delete(int id)

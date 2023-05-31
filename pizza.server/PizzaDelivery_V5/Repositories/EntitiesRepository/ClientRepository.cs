@@ -27,6 +27,7 @@ namespace PizzaDelivery_V5.Repositories.EntitiesRepository
                 PhoneNumber = newClient.PhoneNumber,
                 Password = newClient.Password
             };
+           // var order = await _db.Order.FirstOrDefaultAsync(u => u.ClientId == newClient.Id);
             await _db.Client.AddAsync(client);
             await _db.SaveChangesAsync();
             return client;

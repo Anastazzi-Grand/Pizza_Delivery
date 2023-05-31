@@ -29,10 +29,5 @@ namespace PizzaDelivery_V5.Entities.Entities
         public int? ClientId { get; set; }
 
         public List<OrderItems> OrderItems { get; set; }
-
-        public Order()
-        {
-            OrderItems = new List<OrderItems>();
-        }
     }
 }

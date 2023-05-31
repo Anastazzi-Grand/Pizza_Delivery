@@ -32,6 +32,11 @@ export default {
       this.catalog = data;
     })
   },
+  computed: {
+      filteredProducts() {
+        return this.products.filter(product => product.name.toLowerCase().includes(this.search.toLowerCase()));
+      }
+    },
   methods: {
     addToCard(markUp, product) {
       this.basket.addProductToBasket(product, markUp)

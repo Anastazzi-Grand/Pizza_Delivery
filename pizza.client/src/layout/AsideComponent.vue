@@ -1,13 +1,19 @@
 <template>
   <ul class="nav flex-column">
     <li class="nav-item">
-      <router-link to="/" class="nav-link"  aria-current="page">Каталог</router-link>
+      <router-link to="/" class="navbar-brand mb-0 h1"  aria-current="page">
+        <span class="d-block" style="font-size: 24px; margin-bottom: 20px;">Каталог</span>
+      </router-link>
     </li>
     <li class="nav-item">
-      <router-link to="/cart" class="nav-link">Корзина</router-link>
+      <router-link to="/cart" class="navbar-brand mb-0 h1">
+        <span class="d-block" style="font-size: 24px; margin-bottom: 20px;">Корзина</span>
+      </router-link>
     </li>
     <li class="nav-item">
-      <router-link to="/orders" class="nav-link">Заказы</router-link>
+      <router-link to="/orders" class="navbar-brand mb-0 h1">
+        <span class="d-block" style="font-size: 24px; margin-bottom: 20px;">Заказы</span>
+      </router-link>
     </li>
   </ul>
 </template>
