@@ -10,7 +10,6 @@
           <p>Цена {{ details.price }} рублей</p>
           <p>Количество в заказе: {{ products.length }} шт</p>
           <p>Стоимость: {{ details.price * products.length }} рублей</p>
-          <p>Время приготовления: {{ details.coockingTime }}</p>
           <button type="button" class="btn btn-primary w-100" @click="basket.addProductToBasket(details)">Добавить ещё
           </button>
           <span></span>

@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import router from '@/router/router';
 import { inject } from 'vue';
 
 export default {
@@ -66,7 +67,10 @@ export default {
             }))
             return acc;
           }, [])
-      }).then(() => this.basket.clear())
+      }).then(() => {
+        this.basket.clear()
+        router.push({name: 'Catalog'})
+      })
     }
   }
 
