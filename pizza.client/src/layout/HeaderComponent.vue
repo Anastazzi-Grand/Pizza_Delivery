@@ -23,6 +23,10 @@ export default {
     data() {
       return {
         basket: inject("basket"),
+          /**
+         * @type {AbstractDataService}
+         * */
+        dataService: inject('dataService'),
         searchTerm: ''
       }
     },
@@ -33,10 +37,10 @@ export default {
   },
   methods: {
       search() {
-        // Получаем значение введенного текста и выполняем поиск в массиве данных
-        const foundItems = this.$store.state.items.filter(item => item.name.toLowerCase().includes(this.searchTerm.toLowerCase()));
-        console.log(foundItems); // выводим найденные элементы в консоль
+        this.dataService.searchTerm = this.searchTerm
+        console.log(this.searchTerm)
         this.searchTerm = ''; // очищаем поле ввода
+
     },
   }
 }
