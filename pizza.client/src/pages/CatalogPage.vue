@@ -8,11 +8,6 @@
     <form class="d-flex mx-5">
       <input @input="search" v-model="searchTerm" class="form-control mr-2" type="search" placeholder="Поиск по названию" aria-label="Search">
     </form>
-    <p class="my-0" v-if="basket.total.count === 0">В корзине пусто</p>
-    <p v-else class="my-0">
-      Выбрано {{basket.total.count}} на сумму {{basket.total.sum}}
-      <button class="btn btn-warning mx-2">Перейти в корзину</button>
-    </p>
   </teleport>
 </template>
 <script>
