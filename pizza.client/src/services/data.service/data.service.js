@@ -1,6 +1,5 @@
 import { AbstractDataService } from "./abstract.data.service";
 import axios from 'axios';
-import { ref } from "vue";
 
 export class DataService extends AbstractDataService {
     /**
@@ -37,7 +36,4 @@ export class DataService extends AbstractDataService {
         }).catch(err => console.error(err));
     }
     async gerOrders(){}
-
-    searchTerm = ref("");
-
 }

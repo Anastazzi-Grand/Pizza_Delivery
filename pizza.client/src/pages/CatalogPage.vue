@@ -4,6 +4,16 @@
         :product="item"
         v-for="item in filteredProducts" v-bind:key="item.id"></ProductsCard>
   </div>
+  <teleport to="#header-search">
+    <form class="d-flex mx-5">
+      <input @input="search" v-model="searchTerm" class="form-control mr-2" type="search" placeholder="Поиск по названию" aria-label="Search">
+    </form>
+    <p class="my-0" v-if="basket.total.count === 0">В корзине пусто</p>
+    <p v-else class="my-0">
+      Выбрано {{basket.total.count}} на сумму {{basket.total.sum}}
+      <button class="btn btn-warning mx-2">Перейти в корзину</button>
+    </p>
+  </teleport>
 </template>
 <script>
 import ProductsCard from '../components/ProductsCard.vue';
@@ -14,9 +24,9 @@ export default {
   data() {
     return {
       catalog: reactive([]),
-      term: {
-        get() {return this.dataService.searchTerm.toLowerCase()}
-      }
+      searchTerm: '',
+      term: ''
+
     }
   },
   setup() {
@@ -34,20 +44,22 @@ export default {
   created() {
     this.dataService.getProducts().then(data => {
       this.catalog = data;
+      this.term = data;
     })
   },
   computed: {
       filteredProducts: {
         get() {
-          console.log(this.catalog)
-          console.log(this.dataService.searchTerm)
-          console.log(this.term.value?.length ? this.catalog?.filter(product => product.name.toLowerCase().includes(this.term.value)) : this.catalog)
-          return this.term.value?.length ? this.catalog?.filter(product => product.name.toLowerCase().includes(this.term.value)) : this.catalog}
+          return this.term;
+        },
+        set(value) {
+          this.term = this.catalog?.filter(product => value ? product.name.toLowerCase().includes(value.toLowerCase()) : product);
+        }
       }
     },
   methods: {
-    addToCard(markUp, product) {
-      this.basket.addProductToBasket(product, markUp)
+    search(event) {
+      this.filteredProducts = event.target.value;
     }
   },
   components: {ProductsCard}
